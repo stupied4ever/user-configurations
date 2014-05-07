@@ -20,4 +20,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'rspec', '~> 2.0'
+  spec.add_development_dependency 'coveralls', '~> 0.7'
+
 end

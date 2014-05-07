@@ -3,5 +3,5 @@ Bundler.setup
 
 require 'user-configurations'
 
-RSpec.configure do |_|
-end
+require 'coveralls'
+Coveralls.wear!
