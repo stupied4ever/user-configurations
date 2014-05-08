@@ -1,10 +1,12 @@
+require 'active_support/core_ext/hash/indifferent_access'
+
 module UserConfigurations
   class Configuration < SimpleDelegator
     attr_accessor :project_name
 
     def initialize(project_name)
       @project_name = project_name
-      super global.merge(user).merge(environment)
+      super global.merge(user).merge(environment).with_indifferent_access
     end
 
     def store(values)
