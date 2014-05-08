@@ -17,15 +17,9 @@ Or install it yourself as:
 
 ## Usage
 
-### Reading
+### Precedence
 
-```ruby
-configs = UserConfigurations::Configuration.new('project')
-configs['user_name']
-```
-
-That will give to you the value of that configuration on a ENV variable, local,
-or global variable (with that precedence).
+ENV > local > global
 
 ### Writing
 
@@ -34,8 +28,19 @@ configs = UserConfigurations::Configuration.new('project')
 configs.store(user_name: 'stupied4ever')
 ```
 
-Will store on a local file placed on ```~/.project``` a [YAML][yaml] file with
-```user_name```.
+Will store on a local file placed on ```~/.project``` a [YAML][yaml] file
+with ```user_name```.
+
+### Reading
+
+```ruby
+configs = UserConfigurations::Configuration.new('project')
+configs['user_name'] # 'stupied4ever'
+```
+
+If you had a global file (```/etc/project```) with the ```user_name```
+configurations, or an ```ENV``` var it would be readable too, just pay
+attention on precendences.
 
 ## Contributing
 
