@@ -1,0 +1,7 @@
+1.0.2
+
+* Fix error on reading configurations, now it's has indifferent_access
+
+1.0.1
+
+* First version
